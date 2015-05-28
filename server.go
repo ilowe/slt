@@ -4,7 +4,7 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
-	vhost "github.com/inconshreveable/go-vhost"
+	vhost "github.com/ilowe/go-vhost"
 	"io"
 	"io/ioutil"
 	"launchpad.net/goyaml"
