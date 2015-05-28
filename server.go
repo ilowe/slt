@@ -55,7 +55,7 @@ type Server struct {
 	wait sync.WaitGroup
 
 	// these are for easier testing
-	mux   *vhost.TLSMuxer
+	mux   *vhost.HTTPMuxer
 	ready chan int
 }
 
@@ -68,7 +68,7 @@ func (s *Server) Run() error {
 	s.Printf("Serving connections on %v", l.Addr())
 
 	// start muxing on it
-	s.mux, err = vhost.NewTLSMuxer(l, muxTimeout)
+	s.mux, err = vhost.NewHTTPMuxer(l, muxTimeout)
 	if err != nil {
 		return err
 	}
